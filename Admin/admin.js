@@ -18,3 +18,20 @@ loginBtn.addEventListener("click", () => {
       console.error(error);
     });
 });
+
+function login(){
+  const username =
+  document.getElementById("username").value;
+
+  const password =
+  document.getElementById("password").value;
+
+  if (username ==="GDsakalam " && password ==="123456"){
+    localStorage.setItem("loogedIn",
+    "true");
+    window.location.href="dashboard.html"
+
+    }else{
+      alert("Invalid credentials");
+  }
+}

@@ -1,3 +1,6 @@
+import { auth } from "../firebase/firebase.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
 const loginBtn = document.getElementById("loginBtn");
 
 loginBtn.addEventListener("click", () => {
@@ -11,7 +14,7 @@ loginBtn.addEventListener("click", () => {
       console.log("User:", user);
 
       // Example redirect after login
-      window.location.href = "dashboard.html";
+      window.location.href = "../Main/dashboard.html";
     })
     .catch((error) => {
       alert("Login failed: " + error.message);
@@ -19,19 +22,11 @@ loginBtn.addEventListener("click", () => {
     });
 });
 
-function login(){
-  const username =
-  document.getElementById("username").value;
+loginBtn.addEventListener("click", () => {
+    alert("Button clicked!");
 
-  const password =
-  document.getElementById("password").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  if (username ==="GDsakalam " && password ==="123456"){
-    localStorage.setItem("loogedIn",
-    "true");
-    window.location.href="dashboard.html"
-
-    }else{
-      alert("Invalid credentials");
-  }
-}
+    // rest of your code...
+});

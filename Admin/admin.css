@@ -5,8 +5,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background-image: url(../Images/background.png);
   overflow: hidden;
+  
 }
 
 /*
@@ -94,14 +94,54 @@ p {
 
 /*/////////////////////////////////////////   SIGN-UP INTERFACE////////////////////////////////////////////////////////////////*/
 
-.gg{
-  width: 250px;
-  background-color: orange;
-}
-  
 .registration{
-  width: 300px;
+  /*width: 200px;
   height: 300px;
   background-color: white;
   border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;*/
+
+   width: 250px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+
+.registration img{
+  width: 80px;
+  position: relative;
+  display: flex;
+
+}
+
+.input-container {
+  margin: 15px 0;
+  justify-content: center
+  ;
+}
+
+.input-container input{
+  border-radius: 25px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-container button{
+  margin-top: 10px;
+  align-items: center;
+  margin-left: 60px;
+
 }

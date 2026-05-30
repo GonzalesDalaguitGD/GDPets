@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <link rel="stylesheet" href="style.css">
+        <title>GD PETS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
+        
+        <header class="header">
+            <a href="index.html">
+                 <img src="../Images/GD_LOGO.png" alt="GD_LOGO"  class="logo">
+            </a>
+
+            <h2 class="btitle">GD PETS</h2>
+
+            <nav class="navbar">
+                
+                    <a href="index.html"class="navlink" target="_self">Home</a>
+                     <a href="services.html"class="navlink"target="_self">Services</a>
+                     <a href="about.html"class="navlink"target="_self">About Us</a>
+                     <a href="contact.html"class="navlink"target="_self">Contact Us</a>
+                
+            </nav>
+            
+            <div class="settings">
+                 <i class="fas fa-cog"></i>
+
+                    <div class="dropdown">s
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+                    </div>
+
+        </header>
+
+       
+            <div class="hero">
+                    <img src="../Images/hero.png" alt="">
+            </div>
+            
+            <div class="grid-container">
+
+                <a href="../Stocks/livestocks.html" class="card large" style="background-image: url('../Images/livestock.png')">
+                    <div class="overlay">
+                    <h2>Livestocks</h2>
+                    <p>Up to 10% OFF</p>
+                    </div>
+                </a>
+
+                <a href="tanks.html" class="card large" style="background-image: url('../Images/tanks.png')">
+                        <div class="overlay">
+                            <h2>Setup</h2>
+                            <p>10+ Available</p>
+                        </div>
+                </a>
+
+                <a href="supplies.html" class="card small" style="background-image: url('../Images/supplies.png')">
+                        <div class="overlay">
+                            <h2>Supplies</h2>
+                        </div>
+                </a>
+
+            
+                <a href="merch.html" class="card small" style="background-image: url('../Images/merch.png')">
+                        <div class="overlay">
+                            <h2>Merch</h2>
+                        </div>
+                </a>
+
+                <a href="equipments.html" class="card small" style="background-image:url(../Images/equips.png) ;">
+                        <div class="overlay">
+                            <h2>Equipments</h2>
+                        </div>
+                </a>
+
+        </div>
+
+        <hr/>
+    
+
+     
+       
+         <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDUEE6oQMxEPWN_jI8Gz_rPBQcQrQrU_y4",
+    authDomain: "gdpets-ce764.firebaseapp.com",
+    projectId: "gdpets-ce764",
+    storageBucket: "gdpets-ce764.firebasestorage.app",
+    messagingSenderId: "327638683123",
+    appId: "1:327638683123:web:b8ec3191a41a5db952d686",
+    measurementId: "G-P0EC4K1NTT"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  console.log("Firebase Connected!");
+</script>           
+        
+      
+
+    </body>
+
+</html>

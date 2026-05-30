@@ -5,11 +5,11 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background-image: url(../Images/login.png);
+  
   overflow: hidden;
 }
 
-/* Background bubbles effect */
+/*
 body::before {
   content: "";
   position: absolute;
@@ -18,7 +18,7 @@ body::before {
   background-image: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px);
   background-size: 80px 80px;
   opacity: 0.3;
-}
+}*/
 
 .login-container {
   width: 250px;
@@ -92,3 +92,16 @@ p {
   text-decoration: none;
 }
 
+/*/////////////////////////////////////////   SIGN-UP INTERFACE////////////////////////////////////////////////////////////////*/
+
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(../Images/background.png);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  

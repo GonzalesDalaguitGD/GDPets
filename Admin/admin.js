@@ -11,7 +11,7 @@ if (!loginBtn) {
 }
 
 
-
+// ---------------- LOGIN----------------
 loginBtn.addEventListener("click", async () => {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
@@ -22,7 +22,25 @@ loginBtn.addEventListener("click", async () => {
 
     console.log("RAW EMAIL:", JSON.stringify(email));
   console.log("RAW PASSWORD:", JSON.stringify(password));
-  
+
+
+// ---------------- LOGOUT ----------------
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      alert("Logged out!");
+      window.location.href = "../login.html";
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  });
+}
+
+
+
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
@@ -37,4 +55,11 @@ loginBtn.addEventListener("click", async () => {
     console.error("Login error:", error.code, error.message);
     alert("Login failed: " + error.message);
   }
+});
+
+import { signOut } from "firebase/auth";
+
+logoutBtn.addEventListener("click", async () => {
+  await signOut(auth);
+  window.location.href = "../login.html";
 });

@@ -29,23 +29,6 @@ loginBtn.addEventListener("click", async () => {
   console.log("RAW PASSWORD:", JSON.stringify(password));
 
 
-// ---------------- LOGOUT ----------------
-const logoutBtn = document.getElementById("logoutBtn");
-
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", async () => {
-    try {
-      await signOut(auth);
-      alert("Logged out!");
-      window.location.href = "../login.html";
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
-  });
-}
-
-
-
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 

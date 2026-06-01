@@ -1,4 +1,4 @@
-
+console.log("AUTH:", auth);
 console.log("admin.js loaded");
 
 import { auth } from "../firebase/firebase.js";
@@ -10,6 +10,8 @@ if (!loginBtn) {
   console.error("Login button not found!");
 }
 
+
+
 loginBtn.addEventListener("click", async () => {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
@@ -17,6 +19,10 @@ loginBtn.addEventListener("click", async () => {
   console.log("EMAIL:", email);
   console.log("PASSWORD:", password);
 
+
+    console.log("RAW EMAIL:", JSON.stringify(email));
+  console.log("RAW PASSWORD:", JSON.stringify(password));
+  
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 

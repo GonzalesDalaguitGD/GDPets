@@ -1,5 +1,10 @@
+console.log("admin.js loaded");
+
 import { auth } from "../firebase/firebase.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+import {
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 
 const loginBtn = document.getElementById("loginBtn");
 
@@ -22,11 +27,5 @@ loginBtn.addEventListener("click", () => {
     });
 });
 
-loginBtn.addEventListener("click", () => {
-    alert("Button clicked!");
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
 
-    // rest of your code...
-});

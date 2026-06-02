@@ -1,10 +1,8 @@
-console.log("admin.js loaded");
 
-import { auth } from "../firebase/firebase.js";
 
 console.log("AUTH:", auth);
 console.log("admin.js loaded");
-console.log("Logout button:", logoutBtn);
+
 
 import { auth } from "../firebase/firebase.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
@@ -45,9 +43,3 @@ loginBtn.addEventListener("click", async () => {
   }
 });
 
-import { signOut } from "firebase/auth";
-
-logoutBtn.addEventListener("click", async () => {
-  await signOut(auth);
-  window.location.href = "../login.html";
-});

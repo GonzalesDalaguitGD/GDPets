@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GDPets Admin Dashboard</title>
+    <link rel="stylesheet" href="adboard.css">
+   
+    
+</head>
+<body class="dashboard-page">
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>GDPets</h2>
+        </div>
+
+        <nav>
+            <a href="#">🏠 Dashboard</a>
+            <a href="#">🐠 Livestock</a>
+            <a href="#">⚙ Equipment</a>
+            <a href="#">📦 Supplies</a>
+            <a href="#">👥 Users</a>
+            <a href="#">📊 Reports</a>
+            <a href="#">⚙ Settings</a>
+        </nav>
+
+    </aside>
+
+    <!-- addProduct -->
+    <div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Add Product</h2>
+
+        <input type="text" id="name" placeholder="Product Name">
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option value="Livestock">Livestock</option>
+            <option value="Equipment">Equipment</option>
+            <option value="Supplies">Supplies</option>
+            <option value="Setups">Setups</option>
+            <option value="Merch">Merch</option>
+        </select>
+
+        <input type="number" id="price" placeholder="Price">
+        <input type="number" id="stock" placeholder="Stock">
+
+        <input type="file" id="productImage" accept="image/*">
+
+        <button id="saveProduct">Save</button>
+        <button id="closeModal">Close</button>
+
+    </div>
+
+</div>
+
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Welcome Back Admin</h1>
+        </header>
+
+        <!-- Stats -->
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Products</h3>
+                <p>156</p>
+            </div>
+
+            <div class="card">
+                <h3>Low Stock</h3>
+                <p>12</p>
+            </div>
+
+            <div class="card">
+                <h3>Users</h3>
+                <p>84</p>
+            </div>
+
+            <div class="card">
+                <h3>Sales</h3>
+                <p>₱25,430</p>
+            </div>
+
+        </section>
+
+        <!-- Product Table -->
+        <section class="inventory">
+
+            <div class="title-row">
+                <h2>Inventory</h2>
+
+                <button id="addBtn">
+                    + Add Product
+                </button>
+            </div>
+
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="🔍 Search products..."
+>
+            <div class="filters">
+                <button onclick="filterProducts('All')">All</button>
+                <button onclick="filterProducts('Livestock')">Livestock</button>
+                <button onclick="filterProducts('Equipment')">Equipment</button>
+                <button onclick="filterProducts('Supplies')">Supplies</button>
+                <button onclick="filterProducts('Setups')">Setups</button>
+                <button onclick="filterProducts('Merch')">Merch</button>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                        <tbody id="productTable">
+
+            </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+ <script src="adboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#081B29;
+    color:white;
+    font-family:Segoe UI;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:250px;
+    background:#06131f;
+    padding:20px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar nav a:hover{
+    background:#00e5ff;
+    color:black;
+}
+
+.main-content{
+    flex:1;
+    padding:20px;
+}
+
+.topbar{
+    margin-bottom:30px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#102a43;
+    padding:25px;
+    border-radius:15px;
+}
+
+.card p{
+    font-size:30px;
+    color:#00e5ff;
+}
+
+.inventory{
+    margin-top:40px;
+    background:#102a43;
+    padding:20px;
+    border-radius:15px;
+}
+
+.title-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+#addBtn{
+    background:#00e5ff;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:15px;
+    text-align:left;
+}
+
+tr{
+    border-bottom:1px solid #1f3f5b;
+}
+
+td img{
+    width:60px;
+}
+
+/*////////////////////////////////add product////////////////////////////////////*/
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+}
+
+.modal-content input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+.modal-content select{
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+.product-img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+#searchBox{
+    width:300px;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin-bottom:15px;
+}

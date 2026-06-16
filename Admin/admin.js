@@ -1,5 +1,50 @@
+import { auth, db } from "../firebase/firebase.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+import { 
+  doc, 
+  getDoc 
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    // ======================
+    // FIREBASE ADMIN CHECK
+    // ======================
+
+    const user = auth.currentUser;
+
+
+    if (!user) {
+
+        window.location.href = "../Admin/login.html";
+        return;
+
+    }
+
+
+    const adminRef = doc(
+        db,
+        "admins",
+        user.uid
+    );
+
+
+    const adminSnap = await getDoc(adminRef);
+
+
+
+    if (!adminSnap.exists()) {
+
+        console.log("NOT ADMIN");
+
+        window.location.href =
+            "../Main/dashboard.html";
+
+        return;
+    }
+
+
+    console.log("ADMIN VERIFIED");
 
     let products = [];
 

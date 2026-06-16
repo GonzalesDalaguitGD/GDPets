@@ -1,6 +1,23 @@
-const menuToggle = document.getElementById("menuToggle");
-const navbar = document.getElementById("navbar");
 
-menuToggle.addEventListener("click", () => {
-  navbar.classList.toggle("active");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+ console.log("USER JS LOADED");
+
+  const role = localStorage.getItem("role");
+
+  if (role === "admin") {
+    window.location.href = "../Admin/adbord.html";
+    return;
+  }
+
+  const btn = document.getElementById("switchToAdmin");
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      localStorage.setItem("role", "admin");
+      window.location.href = "../Admin/adbord.html";
+    });
+  }
+
 });

@@ -157,3 +157,18 @@ td img{
     border:none;
     margin-bottom:15px;
 }
+
+
+
+.switch-btn {
+  padding: 10px 14px;
+  border: none;
+  background: #EB521c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.switch-btn:hover {
+  background: #020D42;
+}

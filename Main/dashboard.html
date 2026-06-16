@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <script type="module" src="../Main/dashboard.js"></script>
-
+       
     </head>
 
     <body>
@@ -40,6 +39,11 @@
     <div class="dropdown">
       <a href="#"><i class="fas fa-user"></i> Profile</a>
       <a href="#"><i class="fas fa-cog"></i> Settings</a>
+
+      <button id="switchToAdmin" class="switch-btn">
+          Back to Admin
+      </button>
+
       <a href="#" id="logoutBtn">Logout</a>
     </div>
   </div>
@@ -119,7 +123,8 @@
   console.log("Firebase Connected!");
 </script>           
         
-      
+      <script src="dashboard.js"></script>
+
 
     </body>
 

@@ -1,45 +1,132 @@
 
+document.addEventListener("DOMContentLoaded", () => {
 
-console.log("AUTH:", auth);
-console.log("admin.js loaded");
+    let products = [];
 
+    const addBtn = document.getElementById("addBtn");
+    const modal = document.getElementById("productModal");
+    const closeBtn = document.getElementById("closeModal");
+    const saveBtn = document.getElementById("saveProduct");
+    const table = document.getElementById("productTable");
 
-import { auth } from "../firebase/firebase.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+    // ❗ Safety checks (prevents your error)
+    if (!addBtn || !modal || !closeBtn || !saveBtn || !table) {
+        console.error("❌ Missing HTML elements. Check IDs:");
+        console.log({ addBtn, modal, closeBtn, saveBtn, table });
+        return;
+    }
 
-const loginBtn = document.getElementById("loginBtn");
+    // Open modal
+    addBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+    });
 
-if (!loginBtn) {
-  console.error("Login button not found!");
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Save product
+    saveBtn.addEventListener("click", () => {
+        
+
+    let name = document.getElementById("name").value;
+    let category = document.getElementById("category").value;
+    let price = document.getElementById("price").value;
+    let stock = document.getElementById("stock").value;
+
+    const imageFile = document.getElementById("productImage").files[0];
+    console.log(imageFile);
+
+    if (!name || !category || !price || !stock || !imageFile) {
+        alert("Please complete all fields.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        let product = {
+            id: Date.now(),
+            image: e.target.result,
+            name,
+            category,
+            price,
+            stock
+        };
+
+        products.push(product);
+
+        renderTable();
+
+        document.getElementById("name").value = "";
+        document.getElementById("category").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("stock").value = "";
+        document.getElementById("productImage").value = "";
+
+        modal.style.display = "none";
+    };
+
+    reader.readAsDataURL(imageFile);
+});
+
+    // Render table
+   function renderTable(productList = products) {
+
+    table.innerHTML = "";
+
+    productList.forEach((p) => {
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>
+                <img src="${p.image}" class="product-img">
+            </td>
+            <td>${p.name}</td>
+            <td>${p.category}</td>
+            <td>₱${p.price}</td>
+            <td>${p.stock}</td>
+            <td>
+                <button onclick="deleteProduct(${p.id})">Delete</button>
+            </td>
+        `;
+
+        table.appendChild(row);
+    });
 }
 
+window.filterProducts = function(category) {
 
-// ---------------- LOGIN----------------
-loginBtn.addEventListener("click", async () => {
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
+    if (category === "All") {
+        renderTable();
+        return;
+    }
 
-  console.log("EMAIL:", email);
-  console.log("PASSWORD:", password);
+    const filtered = products.filter(
+        p => p.category === category
+    );
 
+    renderTable(filtered);
+};
 
-    console.log("RAW EMAIL:", JSON.stringify(email));
-  console.log("RAW PASSWORD:", JSON.stringify(password));
+    // delete function must be global
+    window.deleteProduct = function (id) {
+        products = products.filter(p => p.id !== id);
+        renderTable();
+    };
 
-
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-
-    console.log("User:", userCredential.user);
-
-    alert("Login successful!");
-
-    // redirect
-    window.location.href = "../Main/dashboard.html";
-
-  } catch (error) {
-    console.error("Login error:", error.code, error.message);
-    alert("Login failed: " + error.message);
-  }
 });
+
+
+
+
+
+
+
+
+
+
 
